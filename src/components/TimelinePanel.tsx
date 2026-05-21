@@ -1,7 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { soundManager } from '../utils/sound';
-import { Clock, Network, Cpu, Calendar, ChevronRight } from 'lucide-react';
+import { Clock, Network, Calendar, ChevronRight } from 'lucide-react';
 
 interface TimelineItem {
   id: number;

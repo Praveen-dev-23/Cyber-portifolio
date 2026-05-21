@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { soundManager } from '../utils/sound';
 import { ChevronDown, Terminal, Eye, Radio } from 'lucide-react';
@@ -34,7 +34,7 @@ export default function HeroPanel({ onScrollTo }: HeroPanelProps) {
         setTypedText(fullText.substring(0, typedText.length - 1));
         if (typedText === "") {
           setIsDeleting(false);
-          setSubIdx((prev) => (prev + 1) % SUBTITLES.length);
+          setSubIdx((prev: number) => (prev + 1) % SUBTITLES.length);
         }
       }
     }, speed);

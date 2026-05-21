@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { soundManager } from '../utils/sound';
 import { Award, Code2, Orbit, Database, Cpu, Layout } from 'lucide-react';

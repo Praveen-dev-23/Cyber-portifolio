@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap');
 
 @theme {
   --color-cyber-bg: #030009;
@@ -96,7 +96,20 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  cursor: none; /* We'll render a custom cyberpunk neon cursor */
+}
+
+/* Force-hide default browser cursor globally on devices with a mouse/trackpad as primary input */
+@media (pointer: fine) {
+  *, *:hover, *:active, *:focus {
+    cursor: none !important;
+  }
+}
+
+/* Hide the custom interactive cursor elements completely on devices that only have touch screens (coarse pointing) */
+@media (pointer: coarse) {
+  .custom-cursor-elem {
+    display: none !important;
+  }
 }
 
 /* Custom Cybernetic Scrollbar */

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { soundManager } from '../utils/sound';
-import { Briefcase, Eye, GitFork, ExternalLink, X, Radio } from 'lucide-react';
+import { Briefcase, GitFork, ExternalLink, X, Radio } from 'lucide-react';
 
 interface Project {
   id: string;

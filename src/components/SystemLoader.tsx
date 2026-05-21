@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { soundManager } from '../utils/sound';
-import { Shield, ShieldAlert, Cpu, Network, Radio } from 'lucide-react';
+import { Shield, ShieldAlert, Cpu, Radio } from 'lucide-react';
 
 const BOOT_LOGS = [
   "CYBEROS [Version 9.4.2026] Neural Uplink Core",

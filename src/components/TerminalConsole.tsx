@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { soundManager } from '../utils/sound';
-import { Terminal, RefreshCw, AlertTriangle, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Terminal, AlertTriangle, ShieldCheck, ChevronRight } from 'lucide-react';
 
 interface TerminalLine {
   text: string;
@@ -200,7 +200,6 @@ export default function TerminalConsole() {
 
     // 2. Parse command
     let replyLines: TerminalLine[] = [];
-    let isError = false;
 
     switch (cleanCmd) {
       case 'help':
@@ -244,7 +243,6 @@ export default function TerminalConsole() {
         ];
         break;
       default:
-        isError = true;
         soundManager.playError();
         replyLines = [
           { text: `cyberos: command not found: '${cleanCmd}'. Type 'help' to see standard operations.`, type: 'error' }

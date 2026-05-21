@@ -59,6 +59,9 @@ export default function App() {
 
   return (
     <>
+      {/* Custom glowing crosshair target (rendered unconditionally so it is active during boot/loader screen) */}
+      <CustomCursor />
+
       <AnimatePresence mode="wait">
         {!booted ? (
           <SystemLoader key="loader" onComplete={() => setBooted(true)} />
@@ -71,9 +74,6 @@ export default function App() {
           >
             {/* Interactive WebGL backdrop */}
             <Background3D />
-
-            {/* Custom glowing crosshair target */}
-            <CustomCursor />
 
             {/* Operating System HUD Container */}
             <AppHUD activeSection={activeSection}>

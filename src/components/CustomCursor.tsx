@@ -1,12 +1,9 @@
-import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { AlertTriangle, ShieldCheck, ChevronRight } from 'lucide-react';
 
 export default function CustomCursor() {
   const [hovered, setHovered] = useState(false);
   const [hidden, setHidden] = useState(true);
-  const [isTouch, setIsTouch] = useState(false);
 
   // Raw cursor positions
   const cursorX = useMotionValue(-100);
@@ -18,14 +15,6 @@ export default function CustomCursor() {
   const ringY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    // Detect mobile touch screens - disable custom cursor since touch devices don't have cursors
-    const checkTouch = () => {
-      if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-        setIsTouch(true);
-      }
-    };
-    checkTouch();
-
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -65,13 +54,13 @@ export default function CustomCursor() {
     };
   }, [cursorX, cursorY]);
 
-  if (isTouch || hidden) return null;
+  if (hidden) return null;
 
   return (
     <>
       {/* Outer Spring-Dampened Glow Ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-cyber-cyan pointer-events-none z-9999 flex items-center justify-center"
+        className="custom-cursor-elem fixed top-0 left-0 w-8 h-8 rounded-full border border-cyber-cyan pointer-events-none z-[999999] flex items-center justify-center"
         style={{
           x: ringX,
           y: ringY,
@@ -98,7 +87,7 @@ export default function CustomCursor() {
 
       {/* Inner Immediate Core Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full pointer-events-none z-9999"
+        className="custom-cursor-elem fixed top-0 left-0 w-1.5 h-1.5 rounded-full pointer-events-none z-[999999]"
         style={{
           x: cursorX,
           y: cursorY,
