@@ -46,9 +46,9 @@ const PROJECTS: Project[] = [
   },
   {
     id: "synapse-grid",
-    title: "Synapse grid net",
-    tagline: "Next.js + WebSockets + Redis + 3D rendering",
-    description: "Real-time interactive dashboard mapping network packets through a WebGL particle grid.",
+    title: "PDF ALLrounder",
+    tagline: "Next.js + WebSockets + Redis",
+    description: "Real-time interactive dashboard thats helpful for all types of PDF handlling.",
     extendedDescription: "Created a real-time tracking network for database requests. Implemented high-frequency data pipeline streaming via WebSockets and Redis channels, visualised inside Next.js using a responsive Three.js point system.",
     tags: ["Next.js", "WebSockets", "Redis", "Three.js", "CSS Modules"],
     role: "Full-Stack System Architect",
