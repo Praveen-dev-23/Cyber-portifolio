@@ -49,7 +49,7 @@ const PROJECTS: Project[] = [
     title: "PDF ALLrounder",
     tagline: "Next.js + WebSockets + Redis",
     description: "Real-time interactive dashboard thats helpful for all types of PDF handlling.",
-    extendedDescription: "Created a real-time tracking network for database requests. Implemented high-frequency data pipeline streaming via WebSockets and Redis channels, visualised inside Next.js using a responsive Three.js point system.",
+    extendedDescription: "AI-powered futuristic document toolkit with PDF editing, image conversion, OCR, compression, signatures, and smart file tools — wrapped in a sleek cyberpunk-inspired interface.",
     tags: ["Next.js", "WebSockets", "Redis", "Three.js", "CSS Modules"],
     role: "Full-Stack System Architect",
     uptime: "100% OPERATIONAL",
